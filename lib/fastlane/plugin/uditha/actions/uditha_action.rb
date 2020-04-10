@@ -5,7 +5,14 @@ module Fastlane
   module Actions
     class UdithaAction < Action
       def self.run(params)
-        UI.message("The uditha plugin is working!")
+
+  require "open-uri"
+
+  open("https://i1.sndcdn.com/avatars-000661651634-dgy4p8-t500x500.jpg") {|f|
+     File.open("dunya.jpg","wb") do |file|
+       file.puts f.read
+     end
+  }
       end
 
       def self.description
